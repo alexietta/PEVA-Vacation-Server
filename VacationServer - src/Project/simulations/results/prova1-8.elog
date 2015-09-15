@@ -1,0 +1,37 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1029 rid prova1-8-20150105-23:47:54-5728 b 1000
+KF p -1 c "" s ""
+MC id 1 c cModule t project.simulations.Project n Project cm 1
+MS id 1 d ""
+MC id 2 c Server t project.Server pid 1 n server
+GC m 2 g 0 n in o 0
+MS id 2 d p=215,101
+MC id 3 c Client t project.Client pid 1 n client
+GC m 3 g 1 n out o 1
+MS id 3 d p=81,102
+CC sm 3 sg 1 dm 2 dg 0
+MB sm 1 tm 2 m initialize(0)
+CM id 0 tid 0 eid 0 etid 0 c cMessage n serviceExpired pe -1
+CM id 1 tid 1 eid 1 etid 1 c cMessage n vacationExpired pe -1
+ME
+MB sm 1 tm 3 m initialize(0)
+CM id 2 tid 2 eid 2 etid 2 c cMessage n beep pe -1
+BS id 2 tid 2 eid 2 etid 2 c cMessage n beep pe 0
+ES t 10
+ME
+
+E # 1 t 10 m 3 ce 0 msg 2
+CM id 3 tid 3 eid 3 etid 3 c cMessage n request pe -1
+BS id 3 tid 3 eid 3 etid 3 c cMessage n request pe 1
+SH sm 3 sg 1
+ES t 10
+- Client extracts: 10
+BS id 2 tid 2 eid 2 etid 2 c cMessage n beep pe 1
+ES t 20
+
+E # 2 t 10 m 2 ce 1 msg 3
+- temp: 10
+- queuesize: 0
+- Server after PUSH: 1
+- Server before POP: 1
+SE e 1 c 9 m "Cannot convert 1.06642e+263 to simtime_t: out of range (-9223372.036854775807,9223372.036854775807), allowed by scale exponent -12"

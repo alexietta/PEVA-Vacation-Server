@@ -1,0 +1,21 @@
+version 2
+run prova1-0-20150105-23:47:46-1904
+attr configname prova1
+attr datetime 20150105-23:47:46
+attr experiment prova1
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Project
+attr processid 1904
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0  Project.server  WaitInQueue:vector  ETV
+attr ""  ""
+attr source  WaitInQueue
+0	2	10	0
